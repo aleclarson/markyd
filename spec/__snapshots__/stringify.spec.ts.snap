@@ -1,0 +1,8546 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`stringify() list-unordered-empty-no-space-single-item.md 1`] = `"**"`;
+
+exports[`stringify() list-unordered-empty-no-space-single-item.md 2`] = `
+Array [
+  Object {
+    "block": Array [],
+    "style": "*",
+    "type": "italic",
+  },
+]
+`;
+
+exports[`stringify() mixed-indentation.md 1`] = `
+"# Mixed spaces and tabs
+
+- Very long
+  paragraph
+
+1. Very long
+  paragraph
+
+- Very long
+  paragraph
+
+1. Very long
+  paragraph
+"
+`;
+
+exports[`stringify() mixed-indentation.md 2`] = `
+Array [
+  Object {
+    "block": Array [
+      Object {
+        "text": "Mixed spaces and tabs",
+        "type": "text",
+      },
+    ],
+    "rank": 1,
+    "type": "title",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Very long
+paragraph",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Very long
+paragraph",
+        "type": "text",
+      },
+    ],
+    "bullet": "1.",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Very long
+paragraph",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Very long
+paragraph",
+        "type": "text",
+      },
+    ],
+    "bullet": "1.",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+",
+    "type": "text",
+  },
+]
+`;
+
+exports[`stringify() no-positionals.nooutput.md 1`] = `
+"This document tests for the working of \`position: false\` as a parse
+option.
+
+> Block-quotes
+>
+> * With list items.
+
+Another block-quote:
+
+> 1. And another list.
+
+Some [deeply **nested _elements_**](http://example.com)
+
+An entity: &copy;, and an warning entity: &copy.
+"
+`;
+
+exports[`stringify() no-positionals.nooutput.md 2`] = `
+Array [
+  Object {
+    "text": "This document tests for the working of ",
+    "type": "text",
+  },
+  Object {
+    "code": "position: false",
+    "type": "codeSpan",
+  },
+  Object {
+    "text": " as a parse
+option.",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Block-quotes",
+        "type": "text",
+      },
+      Object {
+        "text": "
+
+",
+        "type": "break",
+      },
+      Object {
+        "block": Array [
+          Object {
+            "text": "With list items.",
+            "type": "text",
+          },
+        ],
+        "bullet": "*",
+        "indent": "",
+        "type": "list",
+      },
+    ],
+    "type": "quote",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Another block-quote:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "And another list.",
+            "type": "text",
+          },
+        ],
+        "bullet": "1.",
+        "indent": "",
+        "type": "list",
+      },
+    ],
+    "type": "quote",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Some ",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "deeply ",
+        "type": "text",
+      },
+      Object {
+        "block": Array [
+          Object {
+            "text": "nested ",
+            "type": "text",
+          },
+          Object {
+            "block": Array [
+              Object {
+                "text": "elements",
+                "type": "text",
+              },
+            ],
+            "style": "_",
+            "type": "italic",
+          },
+        ],
+        "style": "**",
+        "type": "bold",
+      },
+    ],
+    "ref": "",
+    "type": "link",
+    "url": "http://example.com",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "An entity: &copy;, and an warning entity: &copy.
+",
+    "type": "text",
+  },
+]
+`;
+
+exports[`stringify() ordered-and-unordered-lists.md 1`] = `
+"## Unordered
+
+Asterisks tight:
+
+* asterisk 1
+* asterisk 2
+* asterisk 3
+
+Asterisks loose:
+
+* asterisk 1
+
+* asterisk 2
+
+* asterisk 3
+
+* * *
+
+Pluses tight:
+
++ Plus 1
++ Plus 2
++ Plus 3
+
+Pluses loose:
+
++ Plus 1
+
++ Plus 2
+
++ Plus 3
+
+* * *
+
+Minuses tight:
+
+- Minus 1
+- Minus 2
+- Minus 3
+
+Minuses loose:
+
+- Minus 1
+
+- Minus 2
+
+- Minus 3
+
+## Ordered
+
+Tight:
+
+1. First
+2. Second
+3. Third
+
+and:
+
+1. One
+2. Two
+3. Three
+
+Loose using tabs:
+
+1. First
+
+2. Second
+
+3. Third
+
+and using spaces:
+
+1. One
+
+2. Two
+
+3. Three
+
+Multiple paragraphs:
+
+1. Item 1, graf one.
+
+	Item 2. graf two. The quick brown fox jumped over the lazy dog's
+	back.
+	
+2. Item 2.
+
+3. Item 3.
+
+
+
+## Nested
+
+* Tab
+	* Tab
+		* Tab
+
+Here's another:
+
+1. First
+2. Second:
+	* Fee
+	* Fie
+	* Foe
+3. Third
+
+Same thing but with paragraphs:
+
+1. First
+
+2. Second:
+	* Fee
+	* Fie
+	* Foe
+
+3. Third
+
+This was an error in Markdown 1.0.1:
+
+* this
+
+	* sub
+
+	that
+"
+`;
+
+exports[`stringify() ordered-and-unordered-lists.md 2`] = `
+Array [
+  Object {
+    "block": Array [
+      Object {
+        "text": "Unordered",
+        "type": "text",
+      },
+    ],
+    "rank": 2,
+    "type": "title",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Asterisks tight:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "asterisk 1",
+        "type": "text",
+      },
+    ],
+    "bullet": "*",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "asterisk 2",
+        "type": "text",
+      },
+    ],
+    "bullet": "*",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "asterisk 3",
+        "type": "text",
+      },
+    ],
+    "bullet": "*",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "
+Asterisks loose:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "asterisk 1",
+        "type": "text",
+      },
+    ],
+    "bullet": "*",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "asterisk 2",
+        "type": "text",
+      },
+    ],
+    "bullet": "*",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "asterisk 3",
+        "type": "text",
+      },
+    ],
+    "bullet": "*",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "* * *",
+    "type": "border",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Pluses tight:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Plus 1",
+        "type": "text",
+      },
+    ],
+    "bullet": "+",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Plus 2",
+        "type": "text",
+      },
+    ],
+    "bullet": "+",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Plus 3",
+        "type": "text",
+      },
+    ],
+    "bullet": "+",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "
+Pluses loose:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Plus 1",
+        "type": "text",
+      },
+    ],
+    "bullet": "+",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Plus 2",
+        "type": "text",
+      },
+    ],
+    "bullet": "+",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Plus 3",
+        "type": "text",
+      },
+    ],
+    "bullet": "+",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "* * *",
+    "type": "border",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "
+Minuses tight:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Minus 1",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Minus 2",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Minus 3",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "
+Minuses loose:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Minus 1",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Minus 2",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Minus 3",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "
+",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Ordered",
+        "type": "text",
+      },
+    ],
+    "rank": 2,
+    "type": "title",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Tight:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "First",
+        "type": "text",
+      },
+    ],
+    "bullet": "1.",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Second",
+        "type": "text",
+      },
+    ],
+    "bullet": "2.",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Third",
+        "type": "text",
+      },
+    ],
+    "bullet": "3.",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "and:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "One",
+        "type": "text",
+      },
+    ],
+    "bullet": "1.",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Two",
+        "type": "text",
+      },
+    ],
+    "bullet": "2.",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Three",
+        "type": "text",
+      },
+    ],
+    "bullet": "3.",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "
+Loose using tabs:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "First",
+        "type": "text",
+      },
+    ],
+    "bullet": "1.",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Second",
+        "type": "text",
+      },
+    ],
+    "bullet": "2.",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Third",
+        "type": "text",
+      },
+    ],
+    "bullet": "3.",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "and using spaces:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "One",
+        "type": "text",
+      },
+    ],
+    "bullet": "1.",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Two",
+        "type": "text",
+      },
+    ],
+    "bullet": "2.",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Three",
+        "type": "text",
+      },
+    ],
+    "bullet": "3.",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Multiple paragraphs:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Item 1, graf one.",
+        "type": "text",
+      },
+    ],
+    "bullet": "1.",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "code": "Item 2. graf two. The quick brown fox jumped over the lazy dog's
+back.
+",
+    "indent": "	",
+    "syntax": "",
+    "type": "codeBlock",
+  },
+  Object {
+    "text": "
+",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Item 2.",
+        "type": "text",
+      },
+    ],
+    "bullet": "2.",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Item 3.",
+        "type": "text",
+      },
+    ],
+    "bullet": "3.",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Nested",
+        "type": "text",
+      },
+    ],
+    "rank": 2,
+    "type": "title",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Tab",
+        "type": "text",
+      },
+    ],
+    "bullet": "*",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Tab",
+        "type": "text",
+      },
+    ],
+    "bullet": "*",
+    "indent": "	",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Tab",
+        "type": "text",
+      },
+    ],
+    "bullet": "*",
+    "indent": "		",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Here's another:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "First",
+        "type": "text",
+      },
+    ],
+    "bullet": "1.",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Second:",
+        "type": "text",
+      },
+    ],
+    "bullet": "2.",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Fee",
+        "type": "text",
+      },
+    ],
+    "bullet": "*",
+    "indent": "	",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Fie",
+        "type": "text",
+      },
+    ],
+    "bullet": "*",
+    "indent": "	",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Foe",
+        "type": "text",
+      },
+    ],
+    "bullet": "*",
+    "indent": "	",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Third",
+        "type": "text",
+      },
+    ],
+    "bullet": "3.",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Same thing but with paragraphs:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "First",
+        "type": "text",
+      },
+    ],
+    "bullet": "1.",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Second:",
+        "type": "text",
+      },
+    ],
+    "bullet": "2.",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Fee",
+        "type": "text",
+      },
+    ],
+    "bullet": "*",
+    "indent": "	",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Fie",
+        "type": "text",
+      },
+    ],
+    "bullet": "*",
+    "indent": "	",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Foe",
+        "type": "text",
+      },
+    ],
+    "bullet": "*",
+    "indent": "	",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Third",
+        "type": "text",
+      },
+    ],
+    "bullet": "3.",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "
+This was an error in Markdown 1.0.1:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "this",
+        "type": "text",
+      },
+    ],
+    "bullet": "*",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "sub",
+        "type": "text",
+      },
+    ],
+    "bullet": "*",
+    "indent": "	",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "code": "that",
+    "indent": "	",
+    "syntax": "",
+    "type": "codeBlock",
+  },
+  Object {
+    "text": "
+",
+    "type": "text",
+  },
+]
+`;
+
+exports[`stringify() ordered-with-parentheses.md 1`] = `
+"## Ordered
+
+Tight:
+
+1) First
+2) Second
+3) Third
+
+and:
+
+1) One
+2) Two
+3) Three
+
+Loose using tabs:
+
+1) First
+
+2) Second
+
+3) Third
+
+and using spaces:
+
+1) One
+
+2) Two
+
+3) Three
+
+Multiple paragraphs:
+
+1) Item 1, graf one.
+
+	Item 2. graf two. The quick brown fox jumped over the lazy dog's
+	back.
+	
+2) Item 2.
+
+3) Item 3.
+"
+`;
+
+exports[`stringify() ordered-with-parentheses.md 2`] = `
+Array [
+  Object {
+    "block": Array [
+      Object {
+        "text": "Ordered",
+        "type": "text",
+      },
+    ],
+    "rank": 2,
+    "type": "title",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Tight:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "First",
+        "type": "text",
+      },
+    ],
+    "bullet": "1)",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Second",
+        "type": "text",
+      },
+    ],
+    "bullet": "2)",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Third",
+        "type": "text",
+      },
+    ],
+    "bullet": "3)",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "and:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "One",
+        "type": "text",
+      },
+    ],
+    "bullet": "1)",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Two",
+        "type": "text",
+      },
+    ],
+    "bullet": "2)",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Three",
+        "type": "text",
+      },
+    ],
+    "bullet": "3)",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Loose using tabs:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "First",
+        "type": "text",
+      },
+    ],
+    "bullet": "1)",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Second",
+        "type": "text",
+      },
+    ],
+    "bullet": "2)",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Third",
+        "type": "text",
+      },
+    ],
+    "bullet": "3)",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "and using spaces:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "One",
+        "type": "text",
+      },
+    ],
+    "bullet": "1)",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Two",
+        "type": "text",
+      },
+    ],
+    "bullet": "2)",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Three",
+        "type": "text",
+      },
+    ],
+    "bullet": "3)",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Multiple paragraphs:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Item 1, graf one.",
+        "type": "text",
+      },
+    ],
+    "bullet": "1)",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "code": "Item 2. graf two. The quick brown fox jumped over the lazy dog's
+back.
+",
+    "indent": "	",
+    "syntax": "",
+    "type": "codeBlock",
+  },
+  Object {
+    "text": "
+",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Item 2.",
+        "type": "text",
+      },
+    ],
+    "bullet": "2)",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Item 3.",
+        "type": "text",
+      },
+    ],
+    "bullet": "3)",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+",
+    "type": "text",
+  },
+]
+`;
+
+exports[`stringify() paragraphs-and-indentation.md 1`] = `
+"# Without lines.
+
+This is a paragraph
+
+    and this is further text
+
+This is a paragraph
+   and this is further text
+
+This is a paragraph
+
+    and this is a new paragraph
+
+This is a paragraph with some asterisks
+
+    ***
+
+This is a paragraph followed by a horizontal rule
+   ******
+
+# With lines.
+
+This is a paragraph
+
+    and this is code
+
+This is a paragraph
+
+   and this is a new paragraph
+
+This is a paragraph with some asterisks in a code block
+
+    ***
+
+This is a paragraph followed by a horizontal rule
+
+   ******
+
+"
+`;
+
+exports[`stringify() paragraphs-and-indentation.md 2`] = `
+Array [
+  Object {
+    "block": Array [
+      Object {
+        "text": "Without lines.",
+        "type": "text",
+      },
+    ],
+    "rank": 1,
+    "type": "title",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "This is a paragraph
+",
+    "type": "text",
+  },
+  Object {
+    "code": "and this is further text",
+    "indent": "    ",
+    "syntax": "",
+    "type": "codeBlock",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "This is a paragraph
+   and this is further text",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "This is a paragraph
+",
+    "type": "text",
+  },
+  Object {
+    "code": "",
+    "indent": "    ",
+    "syntax": "",
+    "type": "codeBlock",
+  },
+  Object {
+    "text": "
+and this is a new paragraph",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "This is a paragraph with some asterisks
+",
+    "type": "text",
+  },
+  Object {
+    "code": "***",
+    "indent": "    ",
+    "syntax": "",
+    "type": "codeBlock",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "This is a paragraph followed by a horizontal rule
+   ",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [],
+        "style": "*",
+        "type": "italic",
+      },
+    ],
+    "style": "**",
+    "type": "bold",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "With lines.",
+        "type": "text",
+      },
+    ],
+    "rank": 1,
+    "type": "title",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "This is a paragraph",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "code": "and this is code",
+    "indent": "    ",
+    "syntax": "",
+    "type": "codeBlock",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "This is a paragraph",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "   and this is a new paragraph",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "This is a paragraph with some asterisks in a code block",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "code": "***",
+    "indent": "    ",
+    "syntax": "",
+    "type": "codeBlock",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "This is a paragraph followed by a horizontal rule",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "   ",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [],
+        "style": "*",
+        "type": "italic",
+      },
+    ],
+    "style": "**",
+    "type": "bold",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+]
+`;
+
+exports[`stringify() paragraphs-empty.md 1`] = `
+"
+
+aaa
+
+# aaa
+
+
+
+bbb
+
+ccc"
+`;
+
+exports[`stringify() paragraphs-empty.md 2`] = `
+Array [
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "
+aaa
+",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "
+",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "aaa",
+        "type": "text",
+      },
+    ],
+    "rank": 1,
+    "type": "title",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "
+bbb
+",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "ccc",
+    "type": "text",
+  },
+]
+`;
+
+exports[`stringify() reference-link-escape.nooutput.md 1`] = `
+"[b\\\\*r**][b\\\\-r], [b\\\\*r**], [b\\\\*r**].
+
+![foo][b\\\\*r*], ![b\\\\*r*], ![b\\\\*r*].
+
+[b\\\\*r*]: http://google.com
+"
+`;
+
+exports[`stringify() reference-link-escape.nooutput.md 2`] = `
+Array [
+  Object {
+    "block": Array [
+      Object {
+        "text": "b\\\\*r",
+        "type": "text",
+      },
+      Object {
+        "block": Array [],
+        "style": "*",
+        "type": "italic",
+      },
+    ],
+    "ref": "b\\\\-r",
+    "type": "link",
+    "url": "",
+  },
+  Object {
+    "text": ", ",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "b\\\\*r",
+        "type": "text",
+      },
+      Object {
+        "block": Array [],
+        "style": "*",
+        "type": "italic",
+      },
+    ],
+    "ref": "",
+    "type": "link",
+    "url": "",
+  },
+  Object {
+    "text": ", ",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "b\\\\*r",
+        "type": "text",
+      },
+      Object {
+        "block": Array [],
+        "style": "*",
+        "type": "italic",
+      },
+    ],
+    "ref": "",
+    "type": "link",
+    "url": "",
+  },
+  Object {
+    "text": ".",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "alt": "foo",
+    "ref": "b\\\\*r*",
+    "type": "image",
+    "url": "",
+  },
+  Object {
+    "text": ", ",
+    "type": "text",
+  },
+  Object {
+    "alt": "b\\\\*r*",
+    "ref": "",
+    "type": "image",
+    "url": "",
+  },
+  Object {
+    "text": ", ",
+    "type": "text",
+  },
+  Object {
+    "alt": "b\\\\*r*",
+    "ref": "",
+    "type": "image",
+    "url": "",
+  },
+  Object {
+    "text": ".",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "key": "b\\\\*r*",
+    "type": "linkDef",
+    "url": "http://google.com",
+  },
+  Object {
+    "text": "
+",
+    "type": "text",
+  },
+]
+`;
+
+exports[`stringify() reference-link-not-closed.md 1`] = `
+"[bar][bar
+
+[bar][]
+
+[bar]
+"
+`;
+
+exports[`stringify() reference-link-not-closed.md 2`] = `
+Array [
+  Object {
+    "block": Array [
+      Object {
+        "text": "bar",
+        "type": "text",
+      },
+    ],
+    "ref": "bar
+
+[bar",
+    "type": "link",
+    "url": "",
+  },
+  Object {
+    "block": Array [],
+    "ref": "",
+    "type": "link",
+    "url": "",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "bar",
+        "type": "text",
+      },
+    ],
+    "ref": "",
+    "type": "link",
+    "url": "",
+  },
+  Object {
+    "text": "
+",
+    "type": "text",
+  },
+]
+`;
+
+exports[`stringify() same-bullet.nooutput.md 1`] = `
+"
+
+* test
++ test
+- test
+"
+`;
+
+exports[`stringify() stringify-escape.md 1`] = `
+"Characters that should be escaped in general:
+
+\\\\\\\\ \\\\\` \\\\* \\\\[
+
+Characters that shouldn't:
+
+{}]()#+-.!>\\"$%',/:;=?@^~
+
+Underscores are \\\\_escaped\\\\_ unless they appear in_the_middle_of_a_word.
+or **_here**, or here____**_**_
+
+Ampersands are escaped only when they would otherwise start an entity:
+
+- \\\\&copycat \\\\&amp; \\\\&#x26
+- &amp;copycat &amp;amp; &amp;#x26
+- But: ©cat; \`&between;\` &foo; & AT&T &c
+
+Open parenthesis should be escaped after a shortcut reference:
+
+[ref]\\\\(text)
+
+And after a shortcut reference and a space (for GitHub):
+
+[ref] \\\\(text)
+
+Hyphen should be escaped at the beginning of a line:
+
+\\\\- not a list item
+\\\\- not a list item
+  \\\\+ not a list item
+
+Same for angle brackets:
+
+\\\\> not a block quote
+
+And hash signs:
+
+\\\\# not a heading
+  \\\\## not a subheading
+
+Text under a shortcut reference should be preserved verbatim:
+
+- [two*three*]
+- [two\\\\*three]
+- [a\\\\a]
+- [a\\\\\\\\a]
+- [a\\\\\\\\\\\\a]
+- [a_a\\\\_a_]
+
+**GFM:**
+
+Colon should be escaped in URLs:
+
+- http\\\\://user:password@host:port/path?key=value#fragment
+- https\\\\://user:password@host:port/path?key=value#fragment
+- http&colon;//user:password@host:port/path?key=value#fragment
+- https&colon;//user:password@host:port/path?key=value#fragment
+
+Double tildes should be \\\\~~escaped\\\\~~.
+And here: foo~~.~~
+
+Pipes should not be escaped here: |
+
+| here   | they     |
+| ------ | -------- |
+| should | tho\\\\|ugh |
+
+And here:
+
+| here   | they   |
+\\\\| ---- \\\\| ----- \\\\|
+| should | though |
+
+And here:
+
+here   | they
+\\\\---- \\\\| ------
+should | though
+
+**Commonmark:**
+
+Open angle bracket should be escaped:
+
+- \\\\<div>\\\\</div>
+- \\\\<http\\\\:google.com>
+- &lt;div>&lt;/div>
+- &lt;http&colon;google.com>
+"
+`;
+
+exports[`stringify() stringify-escape.md 2`] = `
+Array [
+  Object {
+    "text": "Characters that should be escaped in general:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "\\\\\\\\ \\\\\` \\\\* \\\\[",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Characters that shouldn't:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "{}]()#+-.!>\\"$%',/:;=?@^~",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Underscores are \\\\_escaped\\\\_ unless they appear in",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "the",
+        "type": "text",
+      },
+    ],
+    "style": "_",
+    "type": "italic",
+  },
+  Object {
+    "text": "middle",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "of",
+        "type": "text",
+      },
+    ],
+    "style": "_",
+    "type": "italic",
+  },
+  Object {
+    "text": "a",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "word.
+or ",
+        "type": "text",
+      },
+      Object {
+        "block": Array [
+          Object {
+            "block": Array [
+              Object {
+                "text": "here",
+                "type": "text",
+              },
+              Object {
+                "block": Array [
+                  Object {
+                    "text": ", or here",
+                    "type": "text",
+                  },
+                  Object {
+                    "block": Array [],
+                    "style": "__",
+                    "type": "bold",
+                  },
+                ],
+                "style": "**",
+                "type": "bold",
+              },
+            ],
+            "style": "_",
+            "type": "italic",
+          },
+        ],
+        "style": "**",
+        "type": "bold",
+      },
+    ],
+    "style": "_",
+    "type": "italic",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Ampersands are escaped only when they would otherwise start an entity:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "\\\\&copycat \\\\&amp; \\\\&#x26",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "&amp;copycat &amp;amp; &amp;#x26",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "But: ©cat; ",
+        "type": "text",
+      },
+      Object {
+        "code": "&between;",
+        "type": "codeSpan",
+      },
+      Object {
+        "text": " &foo; & AT&T &c",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Open parenthesis should be escaped after a shortcut reference:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "ref",
+        "type": "text",
+      },
+    ],
+    "ref": "",
+    "type": "link",
+    "url": "",
+  },
+  Object {
+    "text": "\\\\(text)",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "And after a shortcut reference and a space (for GitHub):",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "ref",
+        "type": "text",
+      },
+    ],
+    "ref": "",
+    "type": "link",
+    "url": "",
+  },
+  Object {
+    "text": " \\\\(text)",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Hyphen should be escaped at the beginning of a line:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "\\\\- not a list item
+\\\\- not a list item
+  \\\\+ not a list item",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Same for angle brackets:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "\\\\> not a block quote",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "And hash signs:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "\\\\# not a heading
+  \\\\## not a subheading",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Text under a shortcut reference should be preserved verbatim:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "two",
+            "type": "text",
+          },
+          Object {
+            "block": Array [
+              Object {
+                "text": "three",
+                "type": "text",
+              },
+            ],
+            "style": "*",
+            "type": "italic",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "two\\\\*three",
+            "type": "text",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "a\\\\a",
+            "type": "text",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "a\\\\\\\\a",
+            "type": "text",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "a\\\\\\\\\\\\a",
+            "type": "text",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "a",
+            "type": "text",
+          },
+          Object {
+            "block": Array [
+              Object {
+                "text": "a\\\\_a",
+                "type": "text",
+              },
+            ],
+            "style": "_",
+            "type": "italic",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "GFM:",
+        "type": "text",
+      },
+    ],
+    "style": "**",
+    "type": "bold",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Colon should be escaped in URLs:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "http\\\\://user:password@host:port/path?key=value#fragment",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "https\\\\://user:password@host:port/path?key=value#fragment",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "http&colon;//user:password@host:port/path?key=value#fragment",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "https&colon;//user:password@host:port/path?key=value#fragment",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Double tildes should be \\\\~~escaped\\\\~~.
+And here: foo",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": ".",
+        "type": "text",
+      },
+    ],
+    "style": "~~",
+    "type": "strike",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Pipes should not be escaped here: |",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "| here   | they     |
+| ------ | -------- |
+| should | tho\\\\|ugh |",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "And here:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "| here   | they   |
+\\\\| ---- \\\\| ----- \\\\|
+| should | though |",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "And here:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "here   | they
+\\\\---- \\\\| ------
+should | though",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Commonmark:",
+        "type": "text",
+      },
+    ],
+    "style": "**",
+    "type": "bold",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Open angle bracket should be escaped:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "\\\\<div>\\\\</div>",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "\\\\<http\\\\:google.com>",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "&lt;div>&lt;/div>",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "&lt;http&colon;google.com>",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+",
+    "type": "text",
+  },
+]
+`;
+
+exports[`stringify() stringify-escape.output.commonmark.md 1`] = `
+"Characters that should be escaped in general:
+
+\\\\\\\\ \\\\\` \\\\* \\\\[
+
+Characters that shouldn't:
+
+{}]()#+-.!>\\"$%',/:;=?@^~
+
+Underscores are \\\\_escaped\\\\_ unless they appear in_the_middle_of_a_word._
+
+Ampersands are escaped only when they would otherwise start an entity:
+
+- \\\\&copycat \\\\&amp; \\\\&#x26
+- But: ©cat; \`&between;\` &foo; & AT&T &c
+
+Open parenthesis should be escaped after a shortcut reference:
+
+[ref]\\\\(text)
+
+And after a shortcut reference and a space (for GitHub):
+
+[ref] \\\\(text)
+
+Hyphen should be escaped at the beginning of a line:
+
+\\\\- not a list item
+\\\\- not a list item
+  \\\\+ not a list item
+
+Same for angle brackets:
+
+\\\\> not a block quote
+
+And hash signs:
+
+\\\\# not a heading
+  \\\\## not a subheading
+
+Text under a shortcut reference should be preserved verbatim:
+
+- [two*three*]
+- [two\\\\*three]
+- [a\\\\a]
+- [a\\\\\\\\a]
+- [a\\\\\\\\\\\\a]
+- [a_a\\\\_a_]
+
+**GFM:**
+
+Colon should be escaped in URLs:
+
+- http\\\\://user:password@host:port/path?key=value#fragment
+- https\\\\://user:password@host:port/path?key=value#fragment
+
+Double tildes should be \\\\~~escaped\\\\~~.
+And here: foo\\\\~~.
+
+Pipes should not be escaped here: |
+
+| here   | they     |
+| ------ | -------- |
+| should | tho\\\\|ugh |
+
+And here:
+
+| here   | they   |
+\\\\| ---- \\\\| ----- \\\\|
+| should | though |
+
+And here:
+
+here   | they
+\\\\---- \\\\| ------
+should | though
+
+**Commonmark:**
+
+Open angle bracket should be escaped:
+
+- \\\\<div>\\\\</div>
+- \\\\<http\\\\:google.com>
+"
+`;
+
+exports[`stringify() stringify-escape.output.commonmark.md 2`] = `
+Array [
+  Object {
+    "text": "Characters that should be escaped in general:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "\\\\\\\\ \\\\\` \\\\* \\\\[",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Characters that shouldn't:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "{}]()#+-.!>\\"$%',/:;=?@^~",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Underscores are \\\\_escaped\\\\_ unless they appear in",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "the",
+        "type": "text",
+      },
+    ],
+    "style": "_",
+    "type": "italic",
+  },
+  Object {
+    "text": "middle",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "of",
+        "type": "text",
+      },
+    ],
+    "style": "_",
+    "type": "italic",
+  },
+  Object {
+    "text": "a",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "word.",
+        "type": "text",
+      },
+    ],
+    "style": "_",
+    "type": "italic",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Ampersands are escaped only when they would otherwise start an entity:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "\\\\&copycat \\\\&amp; \\\\&#x26",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "But: ©cat; ",
+        "type": "text",
+      },
+      Object {
+        "code": "&between;",
+        "type": "codeSpan",
+      },
+      Object {
+        "text": " &foo; & AT&T &c",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Open parenthesis should be escaped after a shortcut reference:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "ref",
+        "type": "text",
+      },
+    ],
+    "ref": "",
+    "type": "link",
+    "url": "",
+  },
+  Object {
+    "text": "\\\\(text)",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "And after a shortcut reference and a space (for GitHub):",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "ref",
+        "type": "text",
+      },
+    ],
+    "ref": "",
+    "type": "link",
+    "url": "",
+  },
+  Object {
+    "text": " \\\\(text)",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Hyphen should be escaped at the beginning of a line:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "\\\\- not a list item
+\\\\- not a list item
+  \\\\+ not a list item",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Same for angle brackets:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "\\\\> not a block quote",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "And hash signs:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "\\\\# not a heading
+  \\\\## not a subheading",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Text under a shortcut reference should be preserved verbatim:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "two",
+            "type": "text",
+          },
+          Object {
+            "block": Array [
+              Object {
+                "text": "three",
+                "type": "text",
+              },
+            ],
+            "style": "*",
+            "type": "italic",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "two\\\\*three",
+            "type": "text",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "a\\\\a",
+            "type": "text",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "a\\\\\\\\a",
+            "type": "text",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "a\\\\\\\\\\\\a",
+            "type": "text",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "a",
+            "type": "text",
+          },
+          Object {
+            "block": Array [
+              Object {
+                "text": "a\\\\_a",
+                "type": "text",
+              },
+            ],
+            "style": "_",
+            "type": "italic",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "GFM:",
+        "type": "text",
+      },
+    ],
+    "style": "**",
+    "type": "bold",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Colon should be escaped in URLs:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "http\\\\://user:password@host:port/path?key=value#fragment",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "https\\\\://user:password@host:port/path?key=value#fragment",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Double tildes should be \\\\~~escaped\\\\~~.
+And here: foo\\\\~~.",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Pipes should not be escaped here: |",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "| here   | they     |
+| ------ | -------- |
+| should | tho\\\\|ugh |",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "And here:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "| here   | they   |
+\\\\| ---- \\\\| ----- \\\\|
+| should | though |",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "And here:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "here   | they
+\\\\---- \\\\| ------
+should | though",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Commonmark:",
+        "type": "text",
+      },
+    ],
+    "style": "**",
+    "type": "bold",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Open angle bracket should be escaped:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "\\\\<div>\\\\</div>",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "\\\\<http\\\\:google.com>",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+",
+    "type": "text",
+  },
+]
+`;
+
+exports[`stringify() stringify-escape.output.md 1`] = `
+"Characters that should be escaped in general:
+
+\\\\\\\\ \\\\\` \\\\* \\\\[
+
+Characters that shouldn't:
+
+{}]()#+-.!>\\"$%',/:;=?@^~
+
+Underscores are \\\\_escaped\\\\_ unless they appear in_the_middle_of_a_word._
+
+Ampersands are escaped only when they would otherwise start an entity:
+
+- &amp;copycat &amp;amp; &amp;#x26
+- But: ©cat; \`&between;\` &foo; & AT&T &c
+
+Open parenthesis should be escaped after a shortcut reference:
+
+[ref]\\\\(text)
+
+And after a shortcut reference and a space (for GitHub):
+
+[ref] \\\\(text)
+
+Hyphen should be escaped at the beginning of a line:
+
+\\\\- not a list item
+\\\\- not a list item
+  \\\\+ not a list item
+
+Same for angle brackets:
+
+\\\\> not a block quote
+
+And hash signs:
+
+\\\\# not a heading
+  \\\\## not a subheading
+
+Text under a shortcut reference should be preserved verbatim:
+
+- [two*three*]
+- [two\\\\*three]
+- [a\\\\a]
+- [a\\\\\\\\a]
+- [a\\\\\\\\\\\\a]
+- [a_a\\\\_a_]
+
+**GFM:**
+
+Colon should be escaped in URLs:
+
+- http&#x3A;//user:password@host:port/path?key=value#fragment
+- https&#x3A;//user:password@host:port/path?key=value#fragment
+
+Double tildes should be \\\\~~escaped\\\\~~.
+And here: foo\\\\~~.
+
+Pipes should not be escaped here: |
+
+| here   | they     |
+| ------ | -------- |
+| should | tho\\\\|ugh |
+
+And here:
+
+| here   | they   |
+\\\\| ---- \\\\| ----- \\\\|
+| should | though |
+
+And here:
+
+here   | they
+\\\\---- \\\\| ------
+should | though
+
+**Commonmark:**
+
+Open angle bracket should be escaped:
+
+- &lt;div>&lt;/div>
+- &lt;http&#x3A;google.com>
+"
+`;
+
+exports[`stringify() stringify-escape.output.md 2`] = `
+Array [
+  Object {
+    "text": "Characters that should be escaped in general:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "\\\\\\\\ \\\\\` \\\\* \\\\[",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Characters that shouldn't:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "{}]()#+-.!>\\"$%',/:;=?@^~",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Underscores are \\\\_escaped\\\\_ unless they appear in",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "the",
+        "type": "text",
+      },
+    ],
+    "style": "_",
+    "type": "italic",
+  },
+  Object {
+    "text": "middle",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "of",
+        "type": "text",
+      },
+    ],
+    "style": "_",
+    "type": "italic",
+  },
+  Object {
+    "text": "a",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "word.",
+        "type": "text",
+      },
+    ],
+    "style": "_",
+    "type": "italic",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Ampersands are escaped only when they would otherwise start an entity:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "&amp;copycat &amp;amp; &amp;#x26",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "But: ©cat; ",
+        "type": "text",
+      },
+      Object {
+        "code": "&between;",
+        "type": "codeSpan",
+      },
+      Object {
+        "text": " &foo; & AT&T &c",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Open parenthesis should be escaped after a shortcut reference:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "ref",
+        "type": "text",
+      },
+    ],
+    "ref": "",
+    "type": "link",
+    "url": "",
+  },
+  Object {
+    "text": "\\\\(text)",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "And after a shortcut reference and a space (for GitHub):",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "ref",
+        "type": "text",
+      },
+    ],
+    "ref": "",
+    "type": "link",
+    "url": "",
+  },
+  Object {
+    "text": " \\\\(text)",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Hyphen should be escaped at the beginning of a line:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "\\\\- not a list item
+\\\\- not a list item
+  \\\\+ not a list item",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Same for angle brackets:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "\\\\> not a block quote",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "And hash signs:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "\\\\# not a heading
+  \\\\## not a subheading",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Text under a shortcut reference should be preserved verbatim:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "two",
+            "type": "text",
+          },
+          Object {
+            "block": Array [
+              Object {
+                "text": "three",
+                "type": "text",
+              },
+            ],
+            "style": "*",
+            "type": "italic",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "two\\\\*three",
+            "type": "text",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "a\\\\a",
+            "type": "text",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "a\\\\\\\\a",
+            "type": "text",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "a\\\\\\\\\\\\a",
+            "type": "text",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "a",
+            "type": "text",
+          },
+          Object {
+            "block": Array [
+              Object {
+                "text": "a\\\\_a",
+                "type": "text",
+              },
+            ],
+            "style": "_",
+            "type": "italic",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "GFM:",
+        "type": "text",
+      },
+    ],
+    "style": "**",
+    "type": "bold",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Colon should be escaped in URLs:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "http&#x3A;//user:password@host:port/path?key=value#fragment",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "https&#x3A;//user:password@host:port/path?key=value#fragment",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Double tildes should be \\\\~~escaped\\\\~~.
+And here: foo\\\\~~.",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Pipes should not be escaped here: |",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "| here   | they     |
+| ------ | -------- |
+| should | tho\\\\|ugh |",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "And here:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "| here   | they   |
+\\\\| ---- \\\\| ----- \\\\|
+| should | though |",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "And here:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "here   | they
+\\\\---- \\\\| ------
+should | though",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Commonmark:",
+        "type": "text",
+      },
+    ],
+    "style": "**",
+    "type": "bold",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Open angle bracket should be escaped:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "&lt;div>&lt;/div>",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "&lt;http&#x3A;google.com>",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+",
+    "type": "text",
+  },
+]
+`;
+
+exports[`stringify() stringify-escape.output.nogfm.commonmark.md 1`] = `
+"Characters that should be escaped in general:
+
+\\\\\\\\ \\\\\` \\\\* \\\\[
+
+Characters that shouldn't:
+
+{}]()#+-.!>\\"$%',/:;=?@^~
+
+Underscores are \\\\_escaped\\\\_ unless they appear in_the_middle_of_a_word._
+
+Ampersands are escaped only when they would otherwise start an entity:
+
+- \\\\&copycat \\\\&amp; \\\\&#x26
+- But: ©cat; \`&between;\` &foo; & AT&T &c
+
+Open parenthesis should be escaped after a shortcut reference:
+
+[ref]\\\\(text)
+
+And after a shortcut reference and a space (for GitHub):
+
+[ref] \\\\(text)
+
+Hyphen should be escaped at the beginning of a line:
+
+\\\\- not a list item
+\\\\- not a list item
+  \\\\+ not a list item
+
+Same for angle brackets:
+
+\\\\> not a block quote
+
+And hash signs:
+
+\\\\# not a heading
+  \\\\## not a subheading
+
+Text under a shortcut reference should be preserved verbatim:
+
+- [two*three*]
+- [two\\\\*three]
+- [a\\\\a]
+- [a\\\\\\\\a]
+- [a\\\\\\\\\\\\a]
+- [a_a\\\\_a_]
+
+**GFM:**
+
+Colon should not be escaped in URLs:
+
+- http://user:password@host:port/path?key=value#fragment
+- https://user:password@host:port/path?key=value#fragment
+
+Double tildes should not be ~~escaped~~.
+Nor here: foo~~.~~
+
+Pipes should not be escaped here: |
+
+| here   | they     |
+| ------ | -------- |
+| should | nei|ther |
+
+Nor here:
+
+| here   | they   |
+| ------ | ------ |
+| should | though |
+
+Nor here:
+
+here   | they
+\\\\----- | ------
+should | though
+
+**Commonmark:**
+
+Open angle bracket should be escaped:
+
+- \\\\<div>\\\\</div>
+- \\\\<http:google.com>
+"
+`;
+
+exports[`stringify() stringify-escape.output.nogfm.commonmark.md 2`] = `
+Array [
+  Object {
+    "text": "Characters that should be escaped in general:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "\\\\\\\\ \\\\\` \\\\* \\\\[",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Characters that shouldn't:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "{}]()#+-.!>\\"$%',/:;=?@^~",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Underscores are \\\\_escaped\\\\_ unless they appear in",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "the",
+        "type": "text",
+      },
+    ],
+    "style": "_",
+    "type": "italic",
+  },
+  Object {
+    "text": "middle",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "of",
+        "type": "text",
+      },
+    ],
+    "style": "_",
+    "type": "italic",
+  },
+  Object {
+    "text": "a",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "word.",
+        "type": "text",
+      },
+    ],
+    "style": "_",
+    "type": "italic",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Ampersands are escaped only when they would otherwise start an entity:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "\\\\&copycat \\\\&amp; \\\\&#x26",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "But: ©cat; ",
+        "type": "text",
+      },
+      Object {
+        "code": "&between;",
+        "type": "codeSpan",
+      },
+      Object {
+        "text": " &foo; & AT&T &c",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Open parenthesis should be escaped after a shortcut reference:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "ref",
+        "type": "text",
+      },
+    ],
+    "ref": "",
+    "type": "link",
+    "url": "",
+  },
+  Object {
+    "text": "\\\\(text)",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "And after a shortcut reference and a space (for GitHub):",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "ref",
+        "type": "text",
+      },
+    ],
+    "ref": "",
+    "type": "link",
+    "url": "",
+  },
+  Object {
+    "text": " \\\\(text)",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Hyphen should be escaped at the beginning of a line:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "\\\\- not a list item
+\\\\- not a list item
+  \\\\+ not a list item",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Same for angle brackets:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "\\\\> not a block quote",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "And hash signs:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "\\\\# not a heading
+  \\\\## not a subheading",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Text under a shortcut reference should be preserved verbatim:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "two",
+            "type": "text",
+          },
+          Object {
+            "block": Array [
+              Object {
+                "text": "three",
+                "type": "text",
+              },
+            ],
+            "style": "*",
+            "type": "italic",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "two\\\\*three",
+            "type": "text",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "a\\\\a",
+            "type": "text",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "a\\\\\\\\a",
+            "type": "text",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "a\\\\\\\\\\\\a",
+            "type": "text",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "a",
+            "type": "text",
+          },
+          Object {
+            "block": Array [
+              Object {
+                "text": "a\\\\_a",
+                "type": "text",
+              },
+            ],
+            "style": "_",
+            "type": "italic",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "GFM:",
+        "type": "text",
+      },
+    ],
+    "style": "**",
+    "type": "bold",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Colon should not be escaped in URLs:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "http://user:password@host:port/path?key=value#fragment",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "https://user:password@host:port/path?key=value#fragment",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Double tildes should not be ",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "escaped",
+        "type": "text",
+      },
+    ],
+    "style": "~~",
+    "type": "strike",
+  },
+  Object {
+    "text": ".
+Nor here: foo",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": ".",
+        "type": "text",
+      },
+    ],
+    "style": "~~",
+    "type": "strike",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Pipes should not be escaped here: |",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "| here   | they     |
+| ------ | -------- |
+| should | nei|ther |",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Nor here:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "| here   | they   |
+| ------ | ------ |
+| should | though |",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Nor here:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "here   | they
+\\\\----- | ------
+should | though",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Commonmark:",
+        "type": "text",
+      },
+    ],
+    "style": "**",
+    "type": "bold",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Open angle bracket should be escaped:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "\\\\<div>\\\\</div>",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "\\\\<http:google.com>",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+",
+    "type": "text",
+  },
+]
+`;
+
+exports[`stringify() stringify-escape.output.nogfm.md 1`] = `
+"Characters that should be escaped in general:
+
+\\\\\\\\ \\\\\` \\\\* \\\\[
+
+Characters that shouldn't:
+
+{}]()#+-.!>\\"$%',/:;=?@^~
+
+Underscores are \\\\_escaped\\\\_ unless they appear in_the_middle_of_a_word._
+
+Ampersands are escaped only when they would otherwise start an entity:
+
+- &amp;copycat &amp;amp; &amp;#x26
+- But: ©cat; \`&between;\` &foo; & AT&T &c
+
+Open parenthesis should be escaped after a shortcut reference:
+
+[ref]\\\\(text)
+
+And after a shortcut reference and a space (for GitHub):
+
+[ref] \\\\(text)
+
+Hyphen should be escaped at the beginning of a line:
+
+\\\\- not a list item
+\\\\- not a list item
+  \\\\+ not a list item
+
+Same for angle brackets:
+
+\\\\> not a block quote
+
+And hash signs:
+
+\\\\# not a heading
+  \\\\## not a subheading
+
+Text under a shortcut reference should be preserved verbatim:
+
+- [two*three*]
+- [two\\\\*three]
+- [a\\\\a]
+- [a\\\\\\\\a]
+- [a\\\\\\\\\\\\a]
+- [a_a\\\\_a_]
+
+**GFM:**
+
+Colon should not be escaped in URLs:
+
+- http://user:password@host:port/path?key=value#fragment
+- https://user:password@host:port/path?key=value#fragment
+
+Double tildes should not be ~~escaped~~.
+Nor here: foo~~.~~
+
+Pipes should not be escaped here: |
+
+| here   | they     |
+| ------ | -------- |
+| should | nei|ther |
+
+Nor here:
+
+| here   | they   |
+| ------ | ------ |
+| should | though |
+
+Nor here:
+
+here   | they
+\\\\----- | ------
+should | though
+
+**Commonmark:**
+
+Open angle bracket should be escaped:
+
+- &lt;div>&lt;/div>
+- &lt;http:google.com>
+"
+`;
+
+exports[`stringify() stringify-escape.output.nogfm.md 2`] = `
+Array [
+  Object {
+    "text": "Characters that should be escaped in general:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "\\\\\\\\ \\\\\` \\\\* \\\\[",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Characters that shouldn't:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "{}]()#+-.!>\\"$%',/:;=?@^~",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Underscores are \\\\_escaped\\\\_ unless they appear in",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "the",
+        "type": "text",
+      },
+    ],
+    "style": "_",
+    "type": "italic",
+  },
+  Object {
+    "text": "middle",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "of",
+        "type": "text",
+      },
+    ],
+    "style": "_",
+    "type": "italic",
+  },
+  Object {
+    "text": "a",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "word.",
+        "type": "text",
+      },
+    ],
+    "style": "_",
+    "type": "italic",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Ampersands are escaped only when they would otherwise start an entity:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "&amp;copycat &amp;amp; &amp;#x26",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "But: ©cat; ",
+        "type": "text",
+      },
+      Object {
+        "code": "&between;",
+        "type": "codeSpan",
+      },
+      Object {
+        "text": " &foo; & AT&T &c",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Open parenthesis should be escaped after a shortcut reference:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "ref",
+        "type": "text",
+      },
+    ],
+    "ref": "",
+    "type": "link",
+    "url": "",
+  },
+  Object {
+    "text": "\\\\(text)",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "And after a shortcut reference and a space (for GitHub):",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "ref",
+        "type": "text",
+      },
+    ],
+    "ref": "",
+    "type": "link",
+    "url": "",
+  },
+  Object {
+    "text": " \\\\(text)",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Hyphen should be escaped at the beginning of a line:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "\\\\- not a list item
+\\\\- not a list item
+  \\\\+ not a list item",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Same for angle brackets:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "\\\\> not a block quote",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "And hash signs:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "\\\\# not a heading
+  \\\\## not a subheading",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Text under a shortcut reference should be preserved verbatim:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "two",
+            "type": "text",
+          },
+          Object {
+            "block": Array [
+              Object {
+                "text": "three",
+                "type": "text",
+              },
+            ],
+            "style": "*",
+            "type": "italic",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "two\\\\*three",
+            "type": "text",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "a\\\\a",
+            "type": "text",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "a\\\\\\\\a",
+            "type": "text",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "a\\\\\\\\\\\\a",
+            "type": "text",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "a",
+            "type": "text",
+          },
+          Object {
+            "block": Array [
+              Object {
+                "text": "a\\\\_a",
+                "type": "text",
+              },
+            ],
+            "style": "_",
+            "type": "italic",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "GFM:",
+        "type": "text",
+      },
+    ],
+    "style": "**",
+    "type": "bold",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Colon should not be escaped in URLs:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "http://user:password@host:port/path?key=value#fragment",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "https://user:password@host:port/path?key=value#fragment",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Double tildes should not be ",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "escaped",
+        "type": "text",
+      },
+    ],
+    "style": "~~",
+    "type": "strike",
+  },
+  Object {
+    "text": ".
+Nor here: foo",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": ".",
+        "type": "text",
+      },
+    ],
+    "style": "~~",
+    "type": "strike",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Pipes should not be escaped here: |",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "| here   | they     |
+| ------ | -------- |
+| should | nei|ther |",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Nor here:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "| here   | they   |
+| ------ | ------ |
+| should | though |",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Nor here:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "here   | they
+\\\\----- | ------
+should | though",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Commonmark:",
+        "type": "text",
+      },
+    ],
+    "style": "**",
+    "type": "bold",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Open angle bracket should be escaped:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "&lt;div>&lt;/div>",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "&lt;http:google.com>",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+",
+    "type": "text",
+  },
+]
+`;
+
+exports[`stringify() stringify-escape.output.noposition.pedantic.md 1`] = `
+"Characters that should be escaped in general:
+
+\\\\\\\\ \\\\\` \\\\* \\\\[ \\\\_
+
+Characters that shouldn't:
+
+{}]()#+-.!>\\"$%',/:;=?@^~
+
+Underscores are always \\\\_escaped\\\\_, even when they appear in\\\\_the\\\\_middle\\\\_of\\\\_a\\\\_word.
+
+Ampersands are escaped only when they would otherwise start an entity:
+
+- &amp;copycat &amp;amp; &amp;#x26
+- But: ©cat; \`&between;\` &foo; & AT&T &c
+
+Open parenthesis should be escaped after a shortcut reference:
+
+[ref]\\\\(text)
+
+And after a shortcut reference and a space (for GitHub):
+
+[ref] \\\\(text)
+
+Hyphen should be escaped at the beginning of a line:
+
+\\\\- not a list item
+\\\\- not a list item
+  \\\\+ not a list item
+
+Same for angle brackets:
+
+\\\\> not a block quote
+
+And hash signs:
+
+\\\\# not a heading
+  \\\\## not a subheading
+
+Text under a shortcut reference should be preserved verbatim:
+
+- [two*three*]
+- [two\\\\*three]
+- [a\\\\a]
+- [a\\\\\\\\a]
+- [a\\\\\\\\\\\\a]
+- [a_a\\\\_a_]
+
+**GFM:**
+
+Colon should be escaped in URLs:
+
+- http&#x3A;//user:password@host:port/path?key=value#fragment
+- https&#x3A;//user:password@host:port/path?key=value#fragment
+
+Double tildes should be \\\\~~escaped\\\\~~.
+And here: foo\\\\~~.
+
+Pipes should not be escaped here: |
+
+| here   | they     |
+| ------ | -------- |
+| should | tho\\\\|ugh |
+
+And here:
+
+| here   | they   |
+\\\\| ---- \\\\| ----- \\\\|
+| should | though |
+
+And here:
+
+here   | they
+\\\\---- \\\\| ------
+should | though
+
+**Commonmark:**
+
+Open angle bracket should be escaped:
+
+- &lt;div>&lt;/div>
+- &lt;http&#x3A;google.com>
+"
+`;
+
+exports[`stringify() stringify-escape.output.noposition.pedantic.md 2`] = `
+Array [
+  Object {
+    "text": "Characters that should be escaped in general:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "\\\\\\\\ \\\\\` \\\\* \\\\[ \\\\_",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Characters that shouldn't:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "{}]()#+-.!>\\"$%',/:;=?@^~",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Underscores are always \\\\_escaped\\\\_, even when they appear in\\\\_the\\\\_middle\\\\_of\\\\_a\\\\_word.",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Ampersands are escaped only when they would otherwise start an entity:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "&amp;copycat &amp;amp; &amp;#x26",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "But: ©cat; ",
+        "type": "text",
+      },
+      Object {
+        "code": "&between;",
+        "type": "codeSpan",
+      },
+      Object {
+        "text": " &foo; & AT&T &c",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Open parenthesis should be escaped after a shortcut reference:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "ref",
+        "type": "text",
+      },
+    ],
+    "ref": "",
+    "type": "link",
+    "url": "",
+  },
+  Object {
+    "text": "\\\\(text)",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "And after a shortcut reference and a space (for GitHub):",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "ref",
+        "type": "text",
+      },
+    ],
+    "ref": "",
+    "type": "link",
+    "url": "",
+  },
+  Object {
+    "text": " \\\\(text)",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Hyphen should be escaped at the beginning of a line:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "\\\\- not a list item
+\\\\- not a list item
+  \\\\+ not a list item",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Same for angle brackets:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "\\\\> not a block quote",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "And hash signs:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "\\\\# not a heading
+  \\\\## not a subheading",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Text under a shortcut reference should be preserved verbatim:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "two",
+            "type": "text",
+          },
+          Object {
+            "block": Array [
+              Object {
+                "text": "three",
+                "type": "text",
+              },
+            ],
+            "style": "*",
+            "type": "italic",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "two\\\\*three",
+            "type": "text",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "a\\\\a",
+            "type": "text",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "a\\\\\\\\a",
+            "type": "text",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "a\\\\\\\\\\\\a",
+            "type": "text",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "a",
+            "type": "text",
+          },
+          Object {
+            "block": Array [
+              Object {
+                "text": "a\\\\_a",
+                "type": "text",
+              },
+            ],
+            "style": "_",
+            "type": "italic",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "GFM:",
+        "type": "text",
+      },
+    ],
+    "style": "**",
+    "type": "bold",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Colon should be escaped in URLs:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "http&#x3A;//user:password@host:port/path?key=value#fragment",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "https&#x3A;//user:password@host:port/path?key=value#fragment",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Double tildes should be \\\\~~escaped\\\\~~.
+And here: foo\\\\~~.",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Pipes should not be escaped here: |",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "| here   | they     |
+| ------ | -------- |
+| should | tho\\\\|ugh |",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "And here:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "| here   | they   |
+\\\\| ---- \\\\| ----- \\\\|
+| should | though |",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "And here:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "here   | they
+\\\\---- \\\\| ------
+should | though",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Commonmark:",
+        "type": "text",
+      },
+    ],
+    "style": "**",
+    "type": "bold",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Open angle bracket should be escaped:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "&lt;div>&lt;/div>",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "&lt;http&#x3A;google.com>",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+",
+    "type": "text",
+  },
+]
+`;
+
+exports[`stringify() stringify-escape.output.pedantic.md 1`] = `
+"Characters that should be escaped in general:
+
+\\\\\\\\ \\\\\` \\\\* \\\\[ \\\\_
+
+Characters that shouldn't:
+
+{}]()#+-.!>\\"$%',/:;=?@^~
+
+Underscores are always \\\\_escaped\\\\_, even when they appear in\\\\_the\\\\_middle\\\\_of\\\\_a\\\\_word.
+
+Ampersands are escaped only when they would otherwise start an entity:
+
+- &amp;copycat &amp;amp; &amp;#x26
+- But: ©cat; \`&between;\` &foo; & AT&T &c
+
+Open parenthesis should be escaped after a shortcut reference:
+
+[ref]\\\\(text)
+
+And after a shortcut reference and a space (for GitHub):
+
+[ref] \\\\(text)
+
+Hyphen should be escaped at the beginning of a line:
+
+\\\\- not a list item
+\\\\- not a list item
+  \\\\+ not a list item
+
+Same for angle brackets:
+
+\\\\> not a block quote
+
+And hash signs:
+
+\\\\# not a heading
+  \\\\## not a subheading
+
+Text under a shortcut reference should be preserved verbatim:
+
+- [two*three*]
+- [two\\\\*three]
+- [a\\\\a]
+- [a\\\\\\\\a]
+- [a\\\\\\\\\\\\a]
+- [a_a\\\\_a_]
+
+**GFM:**
+
+Colon should be escaped in URLs:
+
+- http&#x3A;//user:password@host:port/path?key=value#fragment
+- https&#x3A;//user:password@host:port/path?key=value#fragment
+
+Double tildes should be \\\\~~escaped\\\\~~.
+And here: foo\\\\~~.
+
+Pipes should not be escaped here: |
+
+| here   | they     |
+| ------ | -------- |
+| should | tho\\\\|ugh |
+
+And here:
+
+| here   | they   |
+\\\\| ---- \\\\| ----- \\\\|
+| should | though |
+
+And here:
+
+here   | they
+\\\\---- \\\\| ------
+should | though
+
+**Commonmark:**
+
+Open angle bracket should be escaped:
+
+- &lt;div>&lt;/div>
+- &lt;http&#x3A;google.com>
+"
+`;
+
+exports[`stringify() stringify-escape.output.pedantic.md 2`] = `
+Array [
+  Object {
+    "text": "Characters that should be escaped in general:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "\\\\\\\\ \\\\\` \\\\* \\\\[ \\\\_",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Characters that shouldn't:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "{}]()#+-.!>\\"$%',/:;=?@^~",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Underscores are always \\\\_escaped\\\\_, even when they appear in\\\\_the\\\\_middle\\\\_of\\\\_a\\\\_word.",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Ampersands are escaped only when they would otherwise start an entity:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "&amp;copycat &amp;amp; &amp;#x26",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "But: ©cat; ",
+        "type": "text",
+      },
+      Object {
+        "code": "&between;",
+        "type": "codeSpan",
+      },
+      Object {
+        "text": " &foo; & AT&T &c",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Open parenthesis should be escaped after a shortcut reference:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "ref",
+        "type": "text",
+      },
+    ],
+    "ref": "",
+    "type": "link",
+    "url": "",
+  },
+  Object {
+    "text": "\\\\(text)",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "And after a shortcut reference and a space (for GitHub):",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "ref",
+        "type": "text",
+      },
+    ],
+    "ref": "",
+    "type": "link",
+    "url": "",
+  },
+  Object {
+    "text": " \\\\(text)",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Hyphen should be escaped at the beginning of a line:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "\\\\- not a list item
+\\\\- not a list item
+  \\\\+ not a list item",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Same for angle brackets:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "\\\\> not a block quote",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "And hash signs:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "\\\\# not a heading
+  \\\\## not a subheading",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Text under a shortcut reference should be preserved verbatim:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "two",
+            "type": "text",
+          },
+          Object {
+            "block": Array [
+              Object {
+                "text": "three",
+                "type": "text",
+              },
+            ],
+            "style": "*",
+            "type": "italic",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "two\\\\*three",
+            "type": "text",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "a\\\\a",
+            "type": "text",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "a\\\\\\\\a",
+            "type": "text",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "a\\\\\\\\\\\\a",
+            "type": "text",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "a",
+            "type": "text",
+          },
+          Object {
+            "block": Array [
+              Object {
+                "text": "a\\\\_a",
+                "type": "text",
+              },
+            ],
+            "style": "_",
+            "type": "italic",
+          },
+        ],
+        "ref": "",
+        "type": "link",
+        "url": "",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "GFM:",
+        "type": "text",
+      },
+    ],
+    "style": "**",
+    "type": "bold",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Colon should be escaped in URLs:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "http&#x3A;//user:password@host:port/path?key=value#fragment",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "https&#x3A;//user:password@host:port/path?key=value#fragment",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Double tildes should be \\\\~~escaped\\\\~~.
+And here: foo\\\\~~.",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Pipes should not be escaped here: |",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "| here   | they     |
+| ------ | -------- |
+| should | tho\\\\|ugh |",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "And here:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "| here   | they   |
+\\\\| ---- \\\\| ----- \\\\|
+| should | though |",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "And here:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "here   | they
+\\\\---- \\\\| ------
+should | though",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Commonmark:",
+        "type": "text",
+      },
+    ],
+    "style": "**",
+    "type": "bold",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Open angle bracket should be escaped:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "&lt;div>&lt;/div>",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "&lt;http&#x3A;google.com>",
+        "type": "text",
+      },
+    ],
+    "bullet": "-",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+",
+    "type": "text",
+  },
+]
+`;
+
+exports[`stringify() strong-and-em-together-one.md 1`] = `
+"***This is strong and em.*********
+
+So is ***this*** word.******
+
+___This is strong and em._________
+
+So is ___this___ word.
+______"
+`;
+
+exports[`stringify() strong-and-em-together-one.md 2`] = `
+Array [
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "This is strong and em.",
+            "type": "text",
+          },
+          Object {
+            "block": Array [
+              Object {
+                "block": Array [],
+                "style": "*",
+                "type": "italic",
+              },
+            ],
+            "style": "**",
+            "type": "bold",
+          },
+        ],
+        "style": "*",
+        "type": "italic",
+      },
+    ],
+    "style": "**",
+    "type": "bold",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "So is ",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "this",
+            "type": "text",
+          },
+          Object {
+            "block": Array [
+              Object {
+                "block": Array [
+                  Object {
+                    "text": " word.",
+                    "type": "text",
+                  },
+                ],
+                "style": "*",
+                "type": "italic",
+              },
+            ],
+            "style": "**",
+            "type": "bold",
+          },
+        ],
+        "style": "*",
+        "type": "italic",
+      },
+    ],
+    "style": "**",
+    "type": "bold",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "This is strong and em.",
+            "type": "text",
+          },
+          Object {
+            "block": Array [
+              Object {
+                "block": Array [],
+                "style": "_",
+                "type": "italic",
+              },
+            ],
+            "style": "__",
+            "type": "bold",
+          },
+        ],
+        "style": "_",
+        "type": "italic",
+      },
+    ],
+    "style": "__",
+    "type": "bold",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "So is ",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "block": Array [
+          Object {
+            "text": "this",
+            "type": "text",
+          },
+          Object {
+            "block": Array [
+              Object {
+                "block": Array [
+                  Object {
+                    "text": " word.
+",
+                    "type": "text",
+                  },
+                ],
+                "style": "_",
+                "type": "italic",
+              },
+            ],
+            "style": "__",
+            "type": "bold",
+          },
+        ],
+        "style": "_",
+        "type": "italic",
+      },
+    ],
+    "style": "__",
+    "type": "bold",
+  },
+]
+`;
+
+exports[`stringify() strong-and-em-together-two.nooutput.md 1`] = `
+"perform_complicated_task
+
+do_this_and_do_that_and_another_thing_
+
+perform*complicated*task
+
+do*this*and*do*that*and*another*thing
+*"
+`;
+
+exports[`stringify() strong-and-em-together-two.nooutput.md 2`] = `
+Array [
+  Object {
+    "text": "perform",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "complicated",
+        "type": "text",
+      },
+    ],
+    "style": "_",
+    "type": "italic",
+  },
+  Object {
+    "text": "task",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "do",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "this",
+        "type": "text",
+      },
+    ],
+    "style": "_",
+    "type": "italic",
+  },
+  Object {
+    "text": "and",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "do",
+        "type": "text",
+      },
+    ],
+    "style": "_",
+    "type": "italic",
+  },
+  Object {
+    "text": "that",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "and",
+        "type": "text",
+      },
+    ],
+    "style": "_",
+    "type": "italic",
+  },
+  Object {
+    "text": "another",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "thing",
+        "type": "text",
+      },
+    ],
+    "style": "_",
+    "type": "italic",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "perform",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "complicated",
+        "type": "text",
+      },
+    ],
+    "style": "*",
+    "type": "italic",
+  },
+  Object {
+    "text": "task",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "do",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "this",
+        "type": "text",
+      },
+    ],
+    "style": "*",
+    "type": "italic",
+  },
+  Object {
+    "text": "and",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "do",
+        "type": "text",
+      },
+    ],
+    "style": "*",
+    "type": "italic",
+  },
+  Object {
+    "text": "that",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "and",
+        "type": "text",
+      },
+    ],
+    "style": "*",
+    "type": "italic",
+  },
+  Object {
+    "text": "another",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "thing
+",
+        "type": "text",
+      },
+    ],
+    "style": "*",
+    "type": "italic",
+  },
+]
+`;
+
+exports[`stringify() strong-initial-white-space.md 1`] = `
+"** bar **.
+
+__ bar __."
+`;
+
+exports[`stringify() strong-initial-white-space.md 2`] = `
+Array [
+  Object {
+    "block": Array [
+      Object {
+        "text": " bar ",
+        "type": "text",
+      },
+    ],
+    "style": "**",
+    "type": "bold",
+  },
+  Object {
+    "text": ".",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "
+",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": " bar ",
+        "type": "text",
+      },
+    ],
+    "style": "__",
+    "type": "bold",
+  },
+  Object {
+    "text": ".",
+    "type": "text",
+  },
+]
+`;
+
+exports[`stringify() table.md 1`] = `
+"| Heading 1 | **H**eading 2
+| --------- | ---------
+| Cell 1    | Cell 2
+| Cell 3    | Cell 4
+
+| Header 1 | Header 2 | Header 3 | Header 4 |
+| :------: | -------: | :------- | -------- |
+| Cell 1   | Cell 2   | Cell 3   | Cell 4   |
+| Cell 5   | Cell 6   | Cell 7   | Cell 8   |
+
+    Test code
+
+Header 1 | Header 2
+-------- | --------
+Cell 1   | Cell 2
+Cell 3   | Cell 4
+
+Header 1|Header 2|Header 3|Header 4
+:-------|:------:|-------:|--------
+Cell 1  |Cell 2  |Cell 3  |Cell 4*Cell 5*|Cell 6  |Cell 7  |Cell 8
+"
+`;
+
+exports[`stringify() table.md 2`] = `
+Array [
+  Object {
+    "text": "| Heading 1 | ",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "H",
+        "type": "text",
+      },
+    ],
+    "style": "**",
+    "type": "bold",
+  },
+  Object {
+    "text": "eading 2
+| --------- | ---------
+| Cell 1    | Cell 2
+| Cell 3    | Cell 4",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "| Header 1 | Header 2 | Header 3 | Header 4 |
+| :------: | -------: | :------- | -------- |
+| Cell 1   | Cell 2   | Cell 3   | Cell 4   |
+| Cell 5   | Cell 6   | Cell 7   | Cell 8   |",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "code": "Test code",
+    "indent": "    ",
+    "syntax": "",
+    "type": "codeBlock",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Header 1 | Header 2
+-------- | --------
+Cell 1   | Cell 2
+Cell 3   | Cell 4",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Header 1|Header 2|Header 3|Header 4
+:-------|:------:|-------:|--------
+Cell 1  |Cell 2  |Cell 3  |Cell 4
+",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Cell 5",
+        "type": "text",
+      },
+    ],
+    "style": "*",
+    "type": "italic",
+  },
+  Object {
+    "text": "|Cell 6  |Cell 7  |Cell 8
+",
+    "type": "text",
+  },
+]
+`;
+
+exports[`stringify() table-in-list.md 1`] = `
+"* Unordered:
+
+    | A | B |
+    | - | - |
+    | 1 | 2 |
+
+* Ordered:
+
+    | A | B |
+    | - | - |
+    | 1 | 2 |
+"
+`;
+
+exports[`stringify() table-in-list.md 2`] = `
+Array [
+  Object {
+    "block": Array [
+      Object {
+        "text": "Unordered:",
+        "type": "text",
+      },
+    ],
+    "bullet": "*",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "code": "| A | B |
+| - | - |
+| 1 | 2 |",
+    "indent": "    ",
+    "syntax": "",
+    "type": "codeBlock",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "Ordered:",
+        "type": "text",
+      },
+    ],
+    "bullet": "*",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "code": "| A | B |
+| - | - |
+| 1 | 2 |",
+    "indent": "    ",
+    "syntax": "",
+    "type": "codeBlock",
+  },
+  Object {
+    "text": "
+",
+    "type": "text",
+  },
+]
+`;
+
+exports[`stringify() table-invalid-alignment.md 1`] = `
+"Missing alignment characters:
+
+| a | b | c |
+|   |---|---|
+| d | e | f |
+
+* * *
+
+| a | b | c |
+|---|---|   |
+| d | e | f |
+
+Invalid characters:
+
+| a | b | c |
+|---|-*-|---|
+| d | e | f |
+*"
+`;
+
+exports[`stringify() table-invalid-alignment.md 2`] = `
+Array [
+  Object {
+    "text": "Missing alignment characters:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "| a | b | c |
+|   |---|---|
+| d | e | f |",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "* * *",
+    "type": "border",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "| a | b | c |
+|---|---|   |
+| d | e | f |",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Invalid characters:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "| a | b | c |
+|---|-",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "-|---|
+| d | e | f |
+",
+        "type": "text",
+      },
+    ],
+    "style": "*",
+    "type": "italic",
+  },
+]
+`;
+
+exports[`stringify() table-loose.output.loose-table.md 1`] = `
+"Header 1 | Header 2
+-------- | --------
+Cell 1   | Cell 2
+
+Cell 3   | Cell 4
+
+"
+`;
+
+exports[`stringify() table-loose.output.loose-table.md 2`] = `
+Array [
+  Object {
+    "text": "Header 1 | Header 2
+-------- | --------
+Cell 1   | Cell 2",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Cell 3   | Cell 4",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+]
+`;
+
+exports[`stringify() table-pipes-in-code.md 1`] = `
+"| abc |   head2 |
+| --- | ------: |
+| x   |   \`|||\` |
+| x   |       \` || x   |     \`|\` || x   | \`\` f \`\` |
+| x   |    \`\`\`\` || x   |    \`\`f\` |
+
+| abc |   head2
+| --- | ------:
+| x   |       \`| x   |     \`|\`| x   | \`\` f \`\`
+| x   |    \`\`\`\`
+| x   |   \`\`f\`
+"
+`;
+
+exports[`stringify() tabs.md 1`] = `
+"+ this is a list item
+  indented with tabs
+
++ this is a list item
+  indented with spaces
+
+Code:
+
+	this code block is indented by one tab
+
+And:
+
+		this code block is indented by two tabs
+
+And:
+
+	+ this is an example list item
+	  indented with tabs
+	  
+	+ this is an example list item
+	  indented with spaces
+"
+`;
+
+exports[`stringify() tabs.md 2`] = `
+Array [
+  Object {
+    "block": Array [
+      Object {
+        "text": "this is a list item
+indented with tabs",
+        "type": "text",
+      },
+    ],
+    "bullet": "+",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "this is a list item
+indented with spaces",
+        "type": "text",
+      },
+    ],
+    "bullet": "+",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Code:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "code": "this code block is indented by one tab",
+    "indent": "	",
+    "syntax": "",
+    "type": "codeBlock",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "And:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "code": "	this code block is indented by two tabs",
+    "indent": "	",
+    "syntax": "",
+    "type": "codeBlock",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "And:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "this is an example list item
+indented with tabs
+",
+        "type": "text",
+      },
+    ],
+    "bullet": "+",
+    "indent": "	",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "this is an example list item
+indented with spaces",
+        "type": "text",
+      },
+    ],
+    "bullet": "+",
+    "indent": "	",
+    "type": "list",
+  },
+  Object {
+    "text": "
+",
+    "type": "text",
+  },
+]
+`;
+
+exports[`stringify() tabs-and-spaces.md 1`] = `
+"+ this is a list item
+  indented with tabs
+
++ this is a list item
+  indented with spaces
+
+Code:
+
+	this code block is indented by one tab
+
+And:
+
+		this code block is indented by two tabs
+
+And:
+
+	+ this is an example list item
+	  indented with tabs
+	  
+	+ this is an example list item
+	  indented with spaces
+"
+`;
+
+exports[`stringify() tabs-and-spaces.md 2`] = `
+Array [
+  Object {
+    "block": Array [
+      Object {
+        "text": "this is a list item
+indented with tabs",
+        "type": "text",
+      },
+    ],
+    "bullet": "+",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "this is a list item
+indented with spaces",
+        "type": "text",
+      },
+    ],
+    "bullet": "+",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "Code:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "code": "this code block is indented by one tab",
+    "indent": "	",
+    "syntax": "",
+    "type": "codeBlock",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "And:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "code": "	this code block is indented by two tabs",
+    "indent": "	",
+    "syntax": "",
+    "type": "codeBlock",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "And:",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "this is an example list item
+indented with tabs
+",
+        "type": "text",
+      },
+    ],
+    "bullet": "+",
+    "indent": "	",
+    "type": "list",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "this is an example list item
+indented with spaces",
+        "type": "text",
+      },
+    ],
+    "bullet": "+",
+    "indent": "	",
+    "type": "list",
+  },
+  Object {
+    "text": "
+",
+    "type": "text",
+  },
+]
+`;
+
+exports[`stringify() task-list.md 1`] = `
+"# Empty items
+
+* [ ]
+* [	]
+
+1. [x]
+2. [X]
+
+# Single space
+
+* [ ] 
+* [	] 
+
+1. [x] 
+2. [X] 
+
+# Tab
+
+* [ ]	
+* [	]	
+
+1. [x]	
+2. [X]	
+
+# No white space with content
+
+* [ ]Hello;
+* [	]World;
+
+1. [x]Foo.
+2. [X]Bar
+
+# Single space with content
+
+* [ ] Hello;
+* [	] World;
+
+1. [x] Foo.
+2. [X] World :D
+
+# Single tab with content
+
+* [ ]	Hello;
+* [	]	World;
+
+1. [x]	Foo.
+2. [X]	Hello.
+
+# Multiple spaces with content
+
+* [ ]     Hello;
+* [	]     World;
+
+1. [x]    Foo.
+3. [X]    Bar.
+
+# Multiple tabs with content
+
+* [ ]		Hello;
+* [	]		World;
+
+1. [x]		Foo.
+2. [X]		Bar.
+
+# Mixed tabs and spaces
+
+* [ ] 	    Hello;
+
+1. [x]	    World;
+
+* [	]     	Hello;
+* [ ]	   	World.
+
+2. [X]	 	Bar.
+
+# Line breaks
+
+* [
+  ] Hello;
+
+1. [
+  ] Hello;
+
+# Multiple unfinished characters
+
+* [  ] Hello;
+
+1. [ 
+  ] World;
+2. [		] Hello;
+3. [ 	 ] World.
+"
+`;
+
+exports[`stringify() tidyness.md 1`] = `
+"> A list within a blockquote:
+>
+> * asterisk 1
+> * asterisk 2
+> * asterisk 3
+"
+`;
+
+exports[`stringify() tidyness.md 2`] = `
+Array [
+  Object {
+    "block": Array [
+      Object {
+        "text": "A list within a blockquote:",
+        "type": "text",
+      },
+      Object {
+        "text": "
+
+",
+        "type": "break",
+      },
+      Object {
+        "block": Array [
+          Object {
+            "text": "asterisk 1",
+            "type": "text",
+          },
+        ],
+        "bullet": "*",
+        "indent": "",
+        "type": "list",
+      },
+      Object {
+        "block": Array [
+          Object {
+            "text": "asterisk 2",
+            "type": "text",
+          },
+        ],
+        "bullet": "*",
+        "indent": "",
+        "type": "list",
+      },
+      Object {
+        "block": Array [
+          Object {
+            "text": "asterisk 3",
+            "type": "text",
+          },
+        ],
+        "bullet": "*",
+        "indent": "",
+        "type": "list",
+      },
+    ],
+    "type": "quote",
+  },
+  Object {
+    "text": "
+",
+    "type": "text",
+  },
+]
+`;
+
+exports[`stringify() toplevel-paragraphs.md 1`] = `
+"hello world
+
+    how are you
+    how are you
+
+hello world
+
+\`\`\`
+how are you
+\`\`\`
+
+hello world
+
+* * *
+
+hello world
+
+# how are you
+
+hello world
+
+# how are you
+
+hello world
+
+> how are you
+
+hello world
+* how are you
+
+hello world
+<div>how are you</div>
+
+hello world
+<span>how are you</span>
+
+hello [world][how]
+[how]: /are/you
+
+<div>hello</div>
+
+<span>hello</span>
+"
+`;
+
+exports[`stringify() toplevel-paragraphs.md 2`] = `
+Array [
+  Object {
+    "text": "hello world
+",
+    "type": "text",
+  },
+  Object {
+    "code": "how are you
+how are you",
+    "indent": "    ",
+    "syntax": "",
+    "type": "codeBlock",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "hello world
+",
+    "type": "text",
+  },
+  Object {
+    "code": "how are you",
+    "indent": "",
+    "syntax": "",
+    "type": "codeBlock",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "hello world
+",
+    "type": "text",
+  },
+  Object {
+    "text": "* * *",
+    "type": "border",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "hello world
+",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "how are you",
+        "type": "text",
+      },
+    ],
+    "rank": 1,
+    "type": "title",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "hello world
+",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "how are you",
+        "type": "text",
+      },
+    ],
+    "rank": 1,
+    "type": "title",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "hello world
+",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "how are you",
+        "type": "text",
+      },
+    ],
+    "type": "quote",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "hello world
+",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "how are you",
+        "type": "text",
+      },
+    ],
+    "bullet": "*",
+    "indent": "",
+    "type": "list",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "hello world
+<div>how are you</div>",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "hello world
+<span>how are you</span>",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "hello ",
+    "type": "text",
+  },
+  Object {
+    "block": Array [
+      Object {
+        "text": "world",
+        "type": "text",
+      },
+    ],
+    "ref": "how",
+    "type": "link",
+    "url": "",
+  },
+  Object {
+    "text": "
+",
+    "type": "text",
+  },
+  Object {
+    "key": "how",
+    "type": "linkDef",
+    "url": "/are/you",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "<div>hello</div>",
+    "type": "text",
+  },
+  Object {
+    "text": "
+
+",
+    "type": "break",
+  },
+  Object {
+    "text": "<span>hello</span>
+",
+    "type": "text",
+  },
+]
+`;

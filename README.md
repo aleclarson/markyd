@@ -10,9 +10,6 @@ import md from 'markyd'
 // Parse some markdown.
 let doc = md('# hello world')
 
-// An immutable AST is instantly provided.
-let ast = doc.ast
-
 // Edit the AST using a mutable proxy.
 doc.edit(draft => {
   // Change the draft in anyway you see fit.
@@ -22,12 +19,14 @@ doc.edit(draft => {
   // To get the string value of a node (or array of nodes):
   let str = md(draft)
 
-  // Use `doc.visit` to walk the AST for specific node types.
+  // Use `md.visit` to walk the AST for specific node types.
   // Visitors are called at the end of this pass.
   md.visit(draft, {
-    image(node) {
+    image(node, parents) {
       assert(node.type == 'image')
-    }
+      // The `parents` argument is the array of ancestors for this node,
+      // and `this` is bound to an object shared between all visitors.
+    },
   })
 })
 
